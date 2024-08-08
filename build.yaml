@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      # A SharedPartBuilder which uses the combining builder
+      source_gen:combining_builder:
+        options:
+          build_extensions:
+            '^lib/{{}}.dart': 'lib/generated/{{}}.g.dart'
+
+      freezed:
+        options:
+          generic_argument_factories: true
+          build_extensions:
+            '^lib/{{}}.dart': 'lib/generated/{{}}.freezed.dart'
